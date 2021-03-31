@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.31105.61
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MPI_BFC_dotNET", "MPI_BFC_dotNET\MPI_BFC_dotNET.csproj", "{D99B7E94-5D6D-4946-B007-043C841EA8DB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Parallel_BFC_dotNET", "Parallel_BFC_dotNET\Parallel_BFC_dotNET.csproj", "{83B6B14F-ADB1-48DA-BB71-09EFC1818A81}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,18 @@ Global
 		{D99B7E94-5D6D-4946-B007-043C841EA8DB}.Release|x64.Build.0 = Release|Any CPU
 		{D99B7E94-5D6D-4946-B007-043C841EA8DB}.Release|x86.ActiveCfg = Release|Any CPU
 		{D99B7E94-5D6D-4946-B007-043C841EA8DB}.Release|x86.Build.0 = Release|Any CPU
+		{83B6B14F-ADB1-48DA-BB71-09EFC1818A81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83B6B14F-ADB1-48DA-BB71-09EFC1818A81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83B6B14F-ADB1-48DA-BB71-09EFC1818A81}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{83B6B14F-ADB1-48DA-BB71-09EFC1818A81}.Debug|x64.Build.0 = Debug|Any CPU
+		{83B6B14F-ADB1-48DA-BB71-09EFC1818A81}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{83B6B14F-ADB1-48DA-BB71-09EFC1818A81}.Debug|x86.Build.0 = Debug|Any CPU
+		{83B6B14F-ADB1-48DA-BB71-09EFC1818A81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83B6B14F-ADB1-48DA-BB71-09EFC1818A81}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83B6B14F-ADB1-48DA-BB71-09EFC1818A81}.Release|x64.ActiveCfg = Release|Any CPU
+		{83B6B14F-ADB1-48DA-BB71-09EFC1818A81}.Release|x64.Build.0 = Release|Any CPU
+		{83B6B14F-ADB1-48DA-BB71-09EFC1818A81}.Release|x86.ActiveCfg = Release|Any CPU
+		{83B6B14F-ADB1-48DA-BB71-09EFC1818A81}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

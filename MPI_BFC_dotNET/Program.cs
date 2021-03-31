@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
-using System.Threading;
 using MPI;
 
-namespace MPI_BFC_dotNET
+namespace MPI_BFS_dotNET
 {
     [Serializable]
     class NodeTree
@@ -48,14 +47,17 @@ namespace MPI_BFC_dotNET
         public NodeTree GenerateTree(int CountOfVertex)
         {
             int i = 1;
-            if (Children.Count == 0)
-                AddChildren(new($"{++i}"));
+            if (Children.Count != 0)
+                throw new Exception("There should be no children in the main node!");
+
             AddChildren(new($"{++i}"));
+            AddChildren(new($"{++i}"));
+
             while (i < CountOfVertex)
             {
-                var currentNodes = DeepNextChildren();
+                var currentDeepChildrensNodes = DeepNextChildren();
                 List<NodeTree> Children = new();
-                foreach (var item in currentNodes)
+                foreach (var item in currentDeepChildrensNodes)
                     Children.Add(item);
 
                 foreach (var item in Children)
