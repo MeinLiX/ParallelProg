@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31105.61
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MPI_BFC_dotNET", "MPI_BFC_dotNET\MPI_BFC_dotNET.csproj", "{D99B7E94-5D6D-4946-B007-043C841EA8DB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MPI_BFS_dotNET", "MPI_BFS_dotNET\MPI_BFS_dotNET.csproj", "{D99B7E94-5D6D-4946-B007-043C841EA8DB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Parallel_BFC_dotNET", "Parallel_BFC_dotNET\Parallel_BFC_dotNET.csproj", "{83B6B14F-ADB1-48DA-BB71-09EFC1818A81}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Parallel_BFS_dotNET", "Parallel_BFS_dotNET\Parallel_BFS_dotNET.csproj", "{83B6B14F-ADB1-48DA-BB71-09EFC1818A81}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

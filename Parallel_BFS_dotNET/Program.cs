@@ -89,7 +89,7 @@ namespace Parallel_BFS_dotNET
             else return ToString();
         }
 
-        public void VisiteDeep(bool flag = true)
+        public void VisiteDeepP(bool flag = true)
         {
             Visited = flag;
             Parallel.ForEach(NextChildren(),
@@ -101,6 +101,18 @@ namespace Parallel_BFS_dotNET
                        node.Visited = flag;
                });
         }
+
+        public void VisiteDeep(bool flag = true)
+        {
+            Visited = flag;
+            foreach (var node in NextChildren())
+            {
+                if (node.Children.Count > 0)
+                    node.VisiteDeep(flag);
+                else
+                    node.Visited = flag;
+            }
+        }
     }
 
     class Program
@@ -108,16 +120,17 @@ namespace Parallel_BFS_dotNET
         static void Main(string[] args)
         {
             NodeTree graph = new("main");
-            graph.GenerateTree(100000);
+            Stopwatch watchG = new();
+            watchG.Start();
+            graph.GenerateTree(10000000);
+            watchG.Stop();
 
-            Stopwatch watch = new();
+            Stopwatch watchP = new();
+            watchP.Start();
+            graph.VisiteDeepP(true);
+            watchP.Stop();
 
-            watch.Start();
-            graph.VisiteDeep(true);
-            watch.Stop();
-
-            //Console.WriteLine(graph.ToString(true));
-            Console.WriteLine($"Final. Time (ms): {watch.Elapsed.TotalMilliseconds} ");
+            Console.WriteLine($"Final. Time Generation(ms): {watchG.Elapsed.TotalMilliseconds} | Time Parallel(ms): {watchP.Elapsed.TotalMilliseconds}.");
         }
     }
 }
