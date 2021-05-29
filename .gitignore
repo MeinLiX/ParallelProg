@@ -10,3 +10,7 @@
 .dotnet/
 .packages/
 
+/OpenMP_BFS_CPP/Debug
+/OpenMP_BFS_CPP/x64/Debug
+/x64/Debug
+/Debug
