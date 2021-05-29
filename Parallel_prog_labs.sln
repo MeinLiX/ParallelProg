@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.31105.61
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MPI_BFS_dotNET", "MPI_BFS_dotNET\MPI_BFS_dotNET.csproj", "{D99B7E94-5D6D-4946-B007-043C841EA8DB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Parallel_BFS_dotNET", "Parallel_BFS_dotNET\Parallel_BFS_dotNET.csproj", "{83B6B14F-ADB1-48DA-BB71-09EFC1818A81}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Parallel_BFS_dotNET", "Parallel_BFS_dotNET\Parallel_BFS_dotNET.csproj", "{83B6B14F-ADB1-48DA-BB71-09EFC1818A81}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OpenMP_BFS_CPP", "OpenMP_BFS_CPP\OpenMP_BFS_CPP.vcxproj", "{D51D3C5B-AA78-497F-A1A4-F6BC27EB82F9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,6 +43,16 @@ Global
 		{83B6B14F-ADB1-48DA-BB71-09EFC1818A81}.Release|x64.Build.0 = Release|Any CPU
 		{83B6B14F-ADB1-48DA-BB71-09EFC1818A81}.Release|x86.ActiveCfg = Release|Any CPU
 		{83B6B14F-ADB1-48DA-BB71-09EFC1818A81}.Release|x86.Build.0 = Release|Any CPU
+		{D51D3C5B-AA78-497F-A1A4-F6BC27EB82F9}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{D51D3C5B-AA78-497F-A1A4-F6BC27EB82F9}.Debug|x64.ActiveCfg = Debug|x64
+		{D51D3C5B-AA78-497F-A1A4-F6BC27EB82F9}.Debug|x64.Build.0 = Debug|x64
+		{D51D3C5B-AA78-497F-A1A4-F6BC27EB82F9}.Debug|x86.ActiveCfg = Debug|Win32
+		{D51D3C5B-AA78-497F-A1A4-F6BC27EB82F9}.Debug|x86.Build.0 = Debug|Win32
+		{D51D3C5B-AA78-497F-A1A4-F6BC27EB82F9}.Release|Any CPU.ActiveCfg = Release|Win32
+		{D51D3C5B-AA78-497F-A1A4-F6BC27EB82F9}.Release|x64.ActiveCfg = Release|x64
+		{D51D3C5B-AA78-497F-A1A4-F6BC27EB82F9}.Release|x64.Build.0 = Release|x64
+		{D51D3C5B-AA78-497F-A1A4-F6BC27EB82F9}.Release|x86.ActiveCfg = Release|Win32
+		{D51D3C5B-AA78-497F-A1A4-F6BC27EB82F9}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
