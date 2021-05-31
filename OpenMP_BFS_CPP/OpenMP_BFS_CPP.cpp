@@ -29,8 +29,7 @@ int res, nodesNum, node1, node2, node, root;
 void s_init() {
 	int res, nodesNum, node1, node2;
 
-	FILE* fin = fopen("graph_200000_n.in", "r");
-
+	FILE* fin = fopen("graph_200000_nodes_0.in", "r");
 
 	fscanf(fin, "%d", &nodesNum);
 
@@ -48,8 +47,6 @@ void s_init() {
 	res = fclose(fin);
 }
 
-
-//Display the graph
 void display() {
 	for (unsigned int i = 0; i < graph.size(); ++i) {
 		if (graph[i].size() != 0) {
@@ -62,9 +59,7 @@ void display() {
 	}
 }
 
-//Seriel implimentation of BFS
 void s_bfs(int startNode) {
-	//cout << "\nPerform BFS: ";
 
 	qq.push(startNode);
 
@@ -84,17 +79,13 @@ void s_bfs(int startNode) {
 	}
 }
 
-//Parallel Implimentation of BFS
 void p_bfs()
 {
-	//Setup number of threads 
 	omp_set_num_threads(threads_num);
 
-	// Setup omp lock
 	omp_lock_t lck;
 	omp_init_lock(&lck);
 
-	//cout << "\nPerform BFS: ";
 	root = 0;
 	qq.push(root);
 	while (!qq.empty()) {
@@ -107,12 +98,11 @@ void p_bfs()
 				qq.pop();
 
 				marked[node] = 2;
-				//cout << node;
 			}
 
 #pragma omp barrier
 
-#pragma omp parallel for shared (lck) schedule (dynamic)
+#pragma omp parallel for
 			for (i = 0; i < graph[node].size(); ++i) {
 				omp_set_lock(&lck);
 				if (marked[graph[node][i]] == 0) {
@@ -123,9 +113,7 @@ void p_bfs()
 			}
 		}
 	}
-	//cout << "\n";
 
-	// Cleanup
 	omp_destroy_lock(&lck);
 	free(marked);
 }
@@ -134,10 +122,7 @@ int main(int argc, char const* argv[])
 {
 	threads_num = NUM_THREADS;
 
-	//initialize the graph
 	s_init();
-	// Display adjacencies 
-	//cout << "Created the following graph:\n";
 	//display();
 
 	/* Perform Parallel Breadth First Search */
@@ -145,7 +130,7 @@ int main(int argc, char const* argv[])
 	p_bfs();
 	auto end = chrono::steady_clock::now();
 	auto dur = chrono::duration_cast<chrono::milliseconds>(end - start).count();
-	cout << "\Parallel BFS: " << dur << "ms. with " << NUM_THREADS<< " th; \n\n";
+	cout << "\Parallel BFS: " << dur << "ms. with " << NUM_THREADS << " th; \n\n";
 	graph.clear();
 
 	return 0;
