@@ -1,5 +1,4 @@
 #define _CRT_SECURE_NO_WARNINGS
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <vector>
@@ -59,26 +58,6 @@ void display() {
 	}
 }
 
-void s_bfs(int startNode) {
-
-	qq.push(startNode);
-
-	while (!qq.empty()) {
-		int node = qq.front();
-		qq.pop();
-
-		marked[node] = 2;
-		//cout << node;
-
-		for (unsigned int i = 0; i < graph[node].size(); ++i) {
-			if (marked[graph[node][i]] == 0) {
-				qq.push(graph[node][i]);
-				marked[graph[node][i]] = 1;
-			}
-		}
-	}
-}
-
 void p_bfs()
 {
 	omp_set_num_threads(threads_num);
@@ -126,11 +105,11 @@ int main(int argc, char const* argv[])
 	//display();
 
 	/* Perform Parallel Breadth First Search */
-	auto start = chrono::steady_clock::now();
+	auto start1 = chrono::steady_clock::now();
 	p_bfs();
-	auto end = chrono::steady_clock::now();
-	auto dur = chrono::duration_cast<chrono::milliseconds>(end - start).count();
-	cout << "\Parallel BFS: " << dur << "ms. with " << NUM_THREADS << " th; \n\n";
+	auto end1 = chrono::steady_clock::now();
+	auto dur1 = chrono::duration_cast<chrono::milliseconds>(end1 - start1).count();
+	cout << "Parallel BFS: " << dur1 << "ms. with " << NUM_THREADS << " th; \n\n";
 	graph.clear();
 
 	return 0;
